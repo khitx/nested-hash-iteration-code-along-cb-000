@@ -19,12 +19,7 @@ def remove_strawberry(contacts)
     if person == 'Freddy Mercury'
       data.each do |key, value|
         if key == :favorite_ice_cream_flavors
-          value.collect do |flavor|
-            binding.pry
-            if flavor == 'strawberry'
-              flavor.pop
-            end
-          end
+          value.delete_if {|flavor| flavor == 'strawberry'}
         end
       end
     end
